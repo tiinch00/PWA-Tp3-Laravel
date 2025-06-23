@@ -1,61 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## ℹ️ Información del proyecto
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Nombre del proyecto: MyBlog** <br>
+**Materia: Programacion Web Avanzada** <br>
+**Profesora: Lidia López** <br>
+**TP nº 3 Laravel**<br>
 
-## About Laravel
+## 👥 Integrantes del grupo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Pandolfi Francisco  FAI-4650
+- Paredes Martín  FAI-4997
+- Resler Leandro  FAI-4275
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 Descripción de la aplicación
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+MyBlog es un espacio abierto donde los usuarios pueden compartir sus ideas y conocimientos sobre una variedad de temas como tecnología, deportes, salud, ciencia y más. Cada publicación está organizada por categorías, lo que facilita explorar contenido de interés. Los usuarios registrados pueden crear sus propios posts y participar activamente comentando en las publicaciones de otros.
 
-## Learning Laravel
+## 🛠️ Instrucciones de instalación y ejecución
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Siga estos pasos para clonar e instalar correctamente el proyecto en su entorno local.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**1. Abre una terminal y ejecuta el siguiente comando para clonar el repositorio:** 
+```bash
+    git clone https://github.com/FranciscoPJ/tp3-laravel
+```
+**2. Accede al directorio del proyecto:** 
+```bash
+    cd tp3-laravel/myblog
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**3. Instala las dependencias del backend con Composer:** 
+```bash
+    composer install
+``` 
 
-## Laravel Sponsors
+**4. Instala las dependencias del frontend con npm:** 
+```bash
+    npm install
+``` 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**5. Configura la Base de Datos:** 
+```bash
+    -DB_DATABASE=nombre_db 
+    -DB_USERNAME=tu_usuario 
+    -DB_PASSWORD=tu_contraseña 
+``` 
+**6. Corre las migraciones:** 
+```bash
+    php artisan migrate
+``` 
 
-### Premium Partners
+**7. Inicia el servidor local:**
+```bash
+    php artisan serve
+``` 
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**8. Abre su navegador y accede a la URL que aparece en la consola:**
+```bash
+    http://127.0.0.1:8000
+``` 
 
-## Contributing
+---
+**1. En la imagen muestra el inicio de la pagina de MyBlog**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![imagen del home](./myblog/public/images/home.png)
 
-## Code of Conduct
+**2. La sección `<header>` contiene una barra de navegación (`<nav>`) que muestra el título del sitio, "MyBlog", y enlaces de navegación como "Inicio", "Categoría", "Iniciar Sesion" y "Registrarse". Estos enlaces que se muestran cuando el usuario no está autenticado.**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![imagen del nav no autenticado](./myblog/public/images/nav_no_autenticado.png)
 
-## Security Vulnerabilities
+Cuando el usuario ha iniciado sesión, se agrega el enlace de navegación "Añadir Blog" y  "Iniciar Sesion" y "Registrarse" son reemplazado por un **menú de configuración** desplegable en la parte derecha de la barra de navegación. Este menú incluye:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- El nombre del usuario actualmente autenticado.
+- Un enlace al perfil del usuario.
+- Un botón para cerrar sesión.
 
-## License
+![imagen del nav autenticado](./myblog/public/images/nav_autenticado.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+**3. La sección `<footer>` Contiene un título y un párrafo descriptivo. Explica que el blog está dedicado a compartir noticias, artículos y opiniones sobre diversos temas. Incluye las secciones: "Acerca de", "Enlaces" y "Redes Sociales":**
+
+![imagen del footer](./myblog/public/images/footer.png)
+
+**4. En la imagen muestra la vista del listado de categorias, muestra todas las categorias en una columna de "MyBlog":**
+
+![imagen del listado de categorias](./myblog/public/images/listado_de_categorias.png)
+
+**5. En la imagen muestra la vista de un listado de posts de una categoria seleccionada. Tambien se puede filtrar los posts a traves de una buscador:**
+
+![imagen del listado de posts de una categoria](./myblog/public/images/listado_de_posts.png)
+
+**6. En la imagen muestra la vista de un detalle de un post, con su descripcion completa. Tiene botones como "Editar" y "Voler al Listado". Además se publicar comentarios al post:**
+
+![imagen detalle de un post](./myblog/public/images/postDetalle.png)
+
+<br>
+
+![imagen comentar un post](./myblog/public/images/comentarPost.png)
+
+**7. En la imagen muestra la vista de editar un post:**
+
+![imagen editar un post](./myblog/public/images/editarPost.png)
+
+**8. En la imagen muestra la vista de añadir un post:**
+
+![imagen añadir un post](./myblog/public/images/añadirPost.png)
+
+---
